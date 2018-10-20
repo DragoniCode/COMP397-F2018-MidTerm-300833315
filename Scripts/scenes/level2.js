@@ -25,8 +25,8 @@ var scenes;
         // private methods
         // public methods
         Level2.prototype.Start = function () {
-            managers.Game.scoreBoard.Level = 2;
-            this._cloudNum = 1;
+            managers.Game.scoreBoard.Level += 1;
+            this._cloudNum = 2;
             // Instantiates a new Array container of Type objects.Cloud
             this._clouds = new Array();
             // Fill the Cloud Array with Clouds

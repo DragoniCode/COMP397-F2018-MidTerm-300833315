@@ -55,11 +55,15 @@ namespace scenes {
         cloud.Update();
         managers.Collision.Check(this._player, cloud);
       });
+
+      if(managers.Game.scoreBoard.Score == 500){
+        managers.Game.currentState = config.Scene.LEVEL2;
+      }
     }
 
     public Destroy(): void {
-      this.removeAllChildren();
-      this._engineSound.stop();
+      // this.removeAllChildren();
+      // this._engineSound.stop();
     }
 
     public Reset(): void {}

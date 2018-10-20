@@ -50,10 +50,13 @@ var scenes;
                 cloud.Update();
                 managers.Collision.Check(_this._player, cloud);
             });
+            if (managers.Game.scoreBoard.Score == 500) {
+                managers.Game.currentState = config.Scene.LEVEL2;
+            }
         };
         Play.prototype.Destroy = function () {
-            this.removeAllChildren();
-            this._engineSound.stop();
+            // this.removeAllChildren();
+            // this._engineSound.stop();
         };
         Play.prototype.Reset = function () { };
         Play.prototype.Main = function () {

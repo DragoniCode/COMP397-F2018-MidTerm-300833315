@@ -24,8 +24,8 @@ namespace scenes {
       // public methods
   
       public Start(): void {
-        managers.Game.scoreBoard.Level = 2;
-        this._cloudNum = 1;
+        managers.Game.scoreBoard.Level += 1;
+        this._cloudNum = 2;
   
         // Instantiates a new Array container of Type objects.Cloud
         this._clouds = new Array<objects.Cloud>();

@@ -29,7 +29,12 @@ var objects;
             }
         };
         Ocean.prototype._move = function () {
-            this.y += this.verticalSpeed;
+            if (managers.Game.scoreBoard.Level == 1) {
+                this.y += this.verticalSpeed;
+            }
+            if (managers.Game.scoreBoard.Level == 2) {
+                this.x += this.horizontalSpeed;
+            }
         };
         // public methods
         Ocean.prototype.Reset = function () {
@@ -38,6 +43,7 @@ var objects;
         Ocean.prototype.Start = function () {
             this.Reset();
             this.verticalSpeed = 5; // 5 px per frame
+            this.horizontalSpeed = 5;
         };
         Ocean.prototype.Update = function () {
             this._move();

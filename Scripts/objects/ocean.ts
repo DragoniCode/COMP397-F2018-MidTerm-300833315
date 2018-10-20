@@ -2,6 +2,7 @@ module objects {
     export class Ocean extends objects.GameObject {
         // private instance variables
         private verticalSpeed:number;
+        private horizontalSpeed:number;
 
         // public properties
 
@@ -20,7 +21,14 @@ module objects {
         }
 
         private _move():void {
+            if (managers.Game.scoreBoard.Level == 1)
+            {
             this.y += this.verticalSpeed;
+            }
+            if (managers.Game.scoreBoard.Level == 2)
+            {
+            this.x += this.horizontalSpeed;
+            }
         }
 
         // public methods
@@ -32,6 +40,8 @@ module objects {
         public Start(): void {
             this.Reset();
             this.verticalSpeed = 5; // 5 px per frame
+            this.horizontalSpeed = 5; 
+            
         }
 
         public Update(): void {
