@@ -29,11 +29,14 @@ module objects {
         // public methods
 
         public Reset(): void {
-            this._verticalSpeed = Math.floor((Math.random() * 5) + 5);
-            this._horizontalSpeed = Math.floor((Math.random() * 4) - 2);
-            this.y = -this.Height;
-            this.x = Math.floor((Math.random() * (640 - this.Width)) + this.HalfWidth);
-            this.IsColliding = false;
+
+                this._verticalSpeed = Math.floor((Math.random() * 5) + 5);
+                this._horizontalSpeed = Math.floor((Math.random() * 4) - 2);
+                this.y = -this.Height;
+                this.x = Math.floor((Math.random() * (640 - this.Width)) + this.HalfWidth);
+                this.IsColliding = false;
+
+  
         }        
         
         public Start(): void {

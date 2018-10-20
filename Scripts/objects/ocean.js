@@ -24,12 +24,19 @@ var objects;
         }
         // private methods
         Ocean.prototype._checkBounds = function () {
-            if (this.y >= 0) {
-                this.Reset();
+            if (managers.Game.scoreBoard.Level != 2) {
+                if (this.y >= 0) {
+                    this.Reset();
+                }
+            }
+            if (managers.Game.scoreBoard.Level == 2) {
+                if (this.x >= 0) {
+                    this.Reset();
+                }
             }
         };
         Ocean.prototype._move = function () {
-            if (managers.Game.scoreBoard.Level == 1) {
+            if (managers.Game.scoreBoard.Level != 2) {
                 this.y += this.verticalSpeed;
             }
             if (managers.Game.scoreBoard.Level == 2) {
@@ -38,12 +45,21 @@ var objects;
         };
         // public methods
         Ocean.prototype.Reset = function () {
-            this.y = -960;
+            if (managers.Game.scoreBoard.Level != 2) {
+                this.y = -960;
+            }
+            if (managers.Game.scoreBoard.Level == 2) {
+                this.x = 0;
+            }
         };
         Ocean.prototype.Start = function () {
             this.Reset();
             this.verticalSpeed = 5; // 5 px per frame
-            this.horizontalSpeed = 5;
+            this.horizontalSpeed = -5;
+            // if (managers.Game.scoreBoard.Level == 2)
+            // {
+            //     this.rotation = 90;
+            // } 
         };
         Ocean.prototype.Update = function () {
             this._move();
