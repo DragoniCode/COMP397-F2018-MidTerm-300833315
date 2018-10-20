@@ -84,6 +84,7 @@ namespace scenes {
 
       // add ScoreBoard UI to the Scene
       managers.Game.scoreBoard.AddGameUI(this);
+      managers.Game.scoreBoard.KeepScore(this);
     }
   }
 }

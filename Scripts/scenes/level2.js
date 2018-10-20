@@ -13,18 +13,19 @@ var __extends = (this && this.__extends) || (function () {
 })();
 var scenes;
 (function (scenes) {
-    var Play = /** @class */ (function (_super) {
-        __extends(Play, _super);
+    var Level2 = /** @class */ (function (_super) {
+        __extends(Level2, _super);
         // public properties
         // constructor
-        function Play() {
+        function Level2() {
             var _this = _super.call(this) || this;
             _this.Start();
             return _this;
         }
         // private methods
         // public methods
-        Play.prototype.Start = function () {
+        Level2.prototype.Start = function () {
+            managers.Game.scoreBoard.Level = 2;
             this._cloudNum = 1;
             // Instantiates a new Array container of Type objects.Cloud
             this._clouds = new Array();
@@ -38,7 +39,7 @@ var scenes;
             this._engineSound.loop = -1; // loop forever
             this.Main();
         };
-        Play.prototype.Update = function () {
+        Level2.prototype.Update = function () {
             var _this = this;
             this._ocean.Update();
             this._player.Update();
@@ -51,12 +52,12 @@ var scenes;
                 managers.Collision.Check(_this._player, cloud);
             });
         };
-        Play.prototype.Destroy = function () {
+        Level2.prototype.Destroy = function () {
             this.removeAllChildren();
             this._engineSound.stop();
         };
-        Play.prototype.Reset = function () { };
-        Play.prototype.Main = function () {
+        Level2.prototype.Reset = function () { };
+        Level2.prototype.Main = function () {
             var _this = this;
             // adds ocean to the scene
             this._ocean = new objects.Ocean();
@@ -73,10 +74,9 @@ var scenes;
             });
             // add ScoreBoard UI to the Scene
             managers.Game.scoreBoard.AddGameUI(this);
-            managers.Game.scoreBoard.KeepScore(this);
         };
-        return Play;
+        return Level2;
     }(objects.Scene));
-    scenes.Play = Play;
+    scenes.Level2 = Level2;
 })(scenes || (scenes = {}));
-//# sourceMappingURL=play.js.map
+//# sourceMappingURL=level2.js.map
